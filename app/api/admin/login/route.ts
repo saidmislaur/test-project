@@ -35,7 +35,8 @@ export async function POST(request: NextRequest) {
     })
 
     return response
-  } catch {
+  } catch (err) {
+    console.log("[v0] Admin login error:", err)
     return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 })
   }
 }
